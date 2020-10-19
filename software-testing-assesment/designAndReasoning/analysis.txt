@@ -1,0 +1,93 @@
+Task description
+The following feature has been requested on one of our products.
+This feature is role based and only available to client administrator roles.
+It involves the client administrator having the ability to manage their own standard users of our system:
+Below are the basic requirements:
+
+Ability to add users based on the available licenses
+Ability to edit user details
+Ability to remove users
+
+Solution:
+At first lets assume that our QA team have  test environment with  admin users,
+that have ability to add any user with any permission or licence we need.
+Application (Web) already exist and we have basic design guidelines
+Client administrator role already exist in the app.
+
+
+
+
+1. Questions:
+
+    Product owner:
+    1. What means "their own standard users of our system"? What users exactly should be managed by client admins?
+       Is that only one type of user or list of user types?
+    2. How user managing page should be looks like? List(Data table) of existed user. What data to show on the list? Where to put edit/Create buttons?
+       Do we need a filters to find any specific user? if Yes, what filters should exist? Do we need custom sorting for user list? How to sort by default?
+    3. Is that possible to have users with more specific permission in future, like  only edit or delete?
+    4. All users should be available for all client administrators, or each client administrator should have they own restricted users list to manage (only created by him)
+       In second case, what should we do with existed user? Should we add possibility to re-assign user to another client administrator
+    5. On the add/edit user screen, we need to know the list of fields that should be populated by client administrator while
+       creation. What fields are required to fill and what is not. In edit screen should we restrict any data from editing (login or email adress)
+    6. Do we need any front-end/Back-end validation for any fields. (Like Email format validation. Any restrictions while edit)
+    7. How created user should receive a password for login?
+       There are a several ways: Generate password randomly and send via email. Send a "set password" link via email after creating.
+       Give client administrator ability to set passwords (not secure solution, but less cost/time)
+    8. Depends on question 4 we need a text for emails and discuss behavior in case if user trying to login without password reset
+    9. Do we need a keep data about who from client administrators add/edit/delete user? (revision history, what changes were made)
+    10. Any specific requirements about new screen design or we just  reuse existed styles from already implemented screens?
+    11. By saying "Ability to remove users", do we actually need to remove users from data base, or we just mark them as deleted?
+       In second case, what we should do if client administrator tried to create user with email that was marked as deleted previously
+    12. Time frame for this feature to be delivered?
+    13. Depends on Technical Architect estimation and available time, discuss what feature we do at first and what can be  added later (if time not enough for all).
+
+
+    UX designer:
+
+    1. Depends on product owner response for question 2. We need  a  markups for create edit screen or screens.
+       I case of many fields we don't wanna put all of them on each screen and probably need several steps while creating
+       and several tabs while editing.
+    2. Markups for user management screen
+
+
+
+    Technical Architect:
+    Depends on all responses from PO.
+    1. Is that possible to implement?
+    2. Can we implement it in scope of given time frame. (Estimate)?
+    3. Estimation for each additional feature depends on PO responce
+    3. The way we gonna implement this feature. How backend and frontend communicates. Backend / Frontend validation?
+
+
+
+2. In order to delight the user with these features, how would you want it to work?
+   For all client administrator roles new point in admin menu appears (User management)
+   User without required permission should not see this point in the menu
+   On the User management page client administrators sees existed user list,
+   Edit and delete button displayed for each user
+   Create button displayed on the top of the page
+   Filters displayed on the top of the user list.
+   After click on "create" button client admin directed to the create user page
+   After click on "edit" button client admin directed to the edit user page
+   After click on "delete" button client admin should see confirmation message? (Are you sure you want to delete...)
+   Probably  the easiest way to implement backend part of this feature would be rest requests  (Depends on current app architecture  and Technical Architect responses it can be some better way to implement)
+   GET for getting user data
+   POST for user creation
+   PUT for updating
+   DELETE for deletion
+   Should verify user permission on each request.
+   We need both back/front-end validation for each  field while creation and edit.
+   In case on any error in back-end or/and front-end, need to make sure that no data disappears from populated fields.
+   Probably it would be a good idea to give each permission (create/edit/delete) separately.
+
+
+3. Based on your response to the previous question what would you automate in the testing of this feature?
+   - Unit tests layer (Development team responsibility)
+   - Integration tests layer (Development team responsibility)
+   - API tests layer (QA Team responsibility
+        Cover all requests type GET PUT POST DELETE with valid data and permission
+        Cover all requests type GET PUT POST DELETE without permission
+        Cover PUT and POST requests with invalid data.
+   - UI tests layer (QA Team responsibility
+        Cover create/edit/delete scenarios
+        Cover Front end field validation
