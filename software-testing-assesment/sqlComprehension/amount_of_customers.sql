@@ -1,0 +1,1 @@
+select   count(1) as amount_of_customers from customers;
