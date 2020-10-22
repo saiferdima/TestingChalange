@@ -16,14 +16,14 @@ public class FirstTest {
         $$(".inventory_item").shouldHaveSize(6);
         $$("#inventory_container .inventory_item button").get(0).click();
         $$("#inventory_container .inventory_item button").get(1).click();
-        var firstItemName = $$("#inventory_container .inventory_item_name").get(0).getText();
-        var firstItemPrice = Integer.parseInt( ($$("#inventory_container .pricebar").get(0).getText()).replaceAll("\\D", ""));
-        var secondItemName = $$("#inventory_container .inventory_item_name").get(1).getText();
-        var secondItemPrice = Integer.parseInt( ($$("#inventory_container .pricebar").get(1).getText()).replaceAll("\\D", ""));
+        String firstItemName = $$("#inventory_container .inventory_item_name").get(0).getText();
+        Integer firstItemPrice = Integer.parseInt( ($$("#inventory_container .pricebar").get(0).getText()).replaceAll("\\D", ""));
+        String secondItemName = $$("#inventory_container .inventory_item_name").get(1).getText();
+        Integer secondItemPrice = Integer.parseInt( ($$("#inventory_container .pricebar").get(1).getText()).replaceAll("\\D", ""));
         $(".shopping_cart_container").click();
         $$(".cart_item").shouldHaveSize(2);
-        var firstValueInBasket = $$(".cart_item .inventory_item_name").get(0).getText();
-        var secondValueInBasket = $$(".cart_item .inventory_item_name").get(1).getText();
+        String firstValueInBasket = $$(".cart_item .inventory_item_name").get(0).getText();
+        String secondValueInBasket = $$(".cart_item .inventory_item_name").get(1).getText();
         assertEquals(firstItemName,firstValueInBasket);
         assertEquals(secondItemName,secondValueInBasket);
         //click checkut
