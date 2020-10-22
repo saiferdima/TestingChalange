@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CartPage extends BasePage {
 
-    public void validateItemsCount(Integer itemNumber) {
+    public void validateTotalItemsCount(Integer itemNumber) {
         $$(".cart_item").shouldHaveSize(itemNumber);
     }
 
