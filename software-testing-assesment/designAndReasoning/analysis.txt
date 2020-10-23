@@ -84,10 +84,10 @@ Client administrator role already exist in the app.
 3. Based on your response to the previous question what would you automate in the testing of this feature?
    - Unit tests layer (Development team responsibility)
    - Integration tests layer (Development team responsibility)
-   - API tests layer (QA Team responsibility
+   - API tests layer (QA Team responsibility)
         Cover all requests type GET PUT POST DELETE with valid data and permission
         Cover all requests type GET PUT POST DELETE without permission
         Cover PUT and POST requests with invalid data.
-   - UI tests layer (QA Team responsibility
+   - UI tests layer (QA Team responsibility)
         Cover create/edit/delete scenarios
-        Cover Front end field validation
+        Cover Front-end fields validation
