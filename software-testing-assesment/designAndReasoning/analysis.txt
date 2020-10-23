@@ -20,28 +20,27 @@ Client administrator role already exist in the app.
 1. Questions:
 
     Product owner:
-    1. What means "their own standard users of our system"? What users exactly should be managed by client admins?
-       Is that only one type of user or list of user types?
-    2. How user managing page should be looks like? List(Data table) of existed user. What data to show on the list? Where to put edit/Create buttons?
-       Do we need a filters to find any specific user? if Yes, what filters should exist? Do we need custom sorting for user list? How to sort by default?
-    3. Is that possible to have users with more specific permission in future, like  only edit or delete?
-    4. All users should be available for all client administrators, or each client administrator should have they own restricted users list to manage (only created by him)
-       In second case, what should we do with existed user? Should we add possibility to re-assign user to another client administrator
+    1. What does "their own standard users of our system" statement mean? What exact users can be managed by client admins?
+       Is this the only one type of user or the list of user types?
+    2. How user management page should look like? List (Data table) of existing users? What data needs to be shown on the list? Where Edit/Create buttons need to be placed?
+       Do we need filters to find any specific user? if Yes, what filters should exist? Do we need custom sorting for user list? How to sort by default?
+    3. Is this possible to have users with more specific permission(s) in the future, like only edit or delete?
+    4. All users should be available for all client administrators, or each client administrator should have their own restricted list of users to be managed (e.g only created by him)
+       In second case, what should we do with existing user? Should we add a possibility to re-assign user to another client administrator?
     5. On the add/edit user screen, we need to know the list of fields that should be populated by client administrator while
-       creation. What fields are required to fill and what is not. In edit screen should we restrict any data from editing (login or email adress)
-    6. Do we need any front-end/Back-end validation for any fields. (Like Email format validation. Any restrictions while edit)
-    7. How created user should receive a password for login?
-       There are a several ways: Generate password randomly and send via email. Send a "set password" link via email after creating.
-       Give client administrator ability to set passwords (not secure solution, but less cost/time)
-    8. Depends on question 4 we need a text for emails and discuss behavior in case if user trying to login without password reset
+       creation. What fields are required to e filled out and what - not? On edit screen should we restrict any data from editing (login or email address)?
+    6. Do we need any Front-end/Back-end validation for some fields while user creation (e.g. Email address format validation, number of signs or special signs to be inputted). If yes then are all these rules actual for user editing as well?
+    7. How a newly created user should receive a password for login?
+       There are a several ways: Generate password randomly and send via email. Send a "set password" link via email after creation.
+       Give client administrator an ability to set passwords (not secure solution, but less cost/time)
+    8. Depends on question 4 do we need a text for emails? Is this clear how the system behave in case if user is trying to login without password reset?
     9. Do we need a keep data about who from client administrators add/edit/delete user? (revision history, what changes were made)
-    10. Any specific requirements about new screen design or we just  reuse existed styles from already implemented screens?
-    11. By saying "Ability to remove users", do we actually need to remove users from data base, or we just mark them as deleted?
-       In second case, what we should do if client administrator tried to create user with email that was marked as deleted previously
+    10. Any specific requirements about new screen design or we just  reuse existing styles from already implemented screens?
+    11. By saying "Ability to remove users", do we actually need to remove users from the data base, or we just mark them as deleted?
+       In second case, what we should do if client administrator tries to create a user with email that was marked as deleted previously?
     12. Time frame for this feature to be delivered?
-    13. Depends on Technical Architect estimation and available time, discuss what feature we do at first and what can be  added later (if time not enough for all).
-
-
+    13. Depends on Technical Architect estimation and available time, discuss what feature we do firstly and what can be added later (if time not enough for all).
+    
     UX designer:
 
     1. Depends on product owner response for question 2. We need  a  markups for create edit screen or screens.
