@@ -54,7 +54,7 @@ Client administrator role already exist in the app.
     Depends on all responses from PO.
     1. Is that possible to implement?
     2. Can we implement it in scope of given time frame. (Estimate)?
-    3. Estimation for each additional feature depends on PO responce
+    3. Estimation for each additional feature depends on PO response
     4. The way we gonna implement this feature. How backend and frontend communicates. Backend / Frontend validation?
 
 
